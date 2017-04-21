@@ -12,6 +12,10 @@ import com.nick.wzt.likerefresh.R;
 
 /**
  * Created by apple on 2017/4/20.
+ *
+ * RefScrollview注意点：
+ * 1. 手动加载内容布局
+ *    需要代码中手动设置 adatper.setContentView(); 设置内容布局 具体参考 ScrollViewActivity#initContentView 记得onCreate调用。
  */
 
 public class ScrollViewActivity extends AppCompatActivity {

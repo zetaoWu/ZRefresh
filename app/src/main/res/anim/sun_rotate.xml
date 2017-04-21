@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:interpolator="@android:anim/accelerate_interpolator">
-    <!--android:fromDegrees 起始的角度度数
-        android:toDegrees 结束的角度度数，负数表示逆时针，正数表示顺时针。如10圈则比android:fromDegrees大3600即可
-        android:pivotX 旋转中心的X坐标
-        android:pivotY 旋转中心的Y坐标
-        浮点数或是百分比。浮点数表示相对于Object的左边缘，如5; 百分比表示相对于Object的左边缘，如5%; 另一种百分比表示相对于父容器的左边缘，如5%p; 一般设置为50%表示在Object中心
-        android:duration 表示从android:fromDegrees转动到android:toDegrees所花费的时间，单位为毫秒。可以用来计算速度。
-        android:interpolator表示变化率，但不是运行速度。一个插补属性，可以将动画效果设置为加速，减速，反复，反弹等。默认为开始和结束慢中间快
-        android:startOffset 在调用start函数之后等待开始运行的时间，单位为毫秒，若为10，表示10ms后开始运行
-        android:repeatCount 重复的次数，默认为0，必须是int，可以为-1表示不停止
-        android:repeatMode 重复的模式，默认为restart，即重头开始重新运行，可以为reverse即从结束开始向前重新运行。在android:repeatCount大于0或为infinite时生效
-        android:detachWallpaper 表示是否在壁纸上运行
-        android:zAdjustment 表示被animated的内容在运行时在z轴上的位置，默认为normal。normal保持内容当前的z轴顺序   top运行时在最顶层显示  bottom运行时在最底层显示
-        -->
+   >
+
     <rotate
         android:duration="1000"
         android:fromDegrees="0"
-        android:interpolator="@android:anim/linear_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
         android:toDegrees="360"

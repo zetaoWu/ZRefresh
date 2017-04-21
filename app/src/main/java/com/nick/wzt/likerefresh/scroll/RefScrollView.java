@@ -22,13 +22,6 @@ import com.nick.wzt.likerefresh.R;
  */
 
 
-/**
- * ScrollView 的思想
- * 1.封装了RefScrollView 内部布局 是一直垂直的LinearLayout，子布局为HeadView，ContentView. HeadView为内部实现了。ContentView由代码中设置。
- * 2.onTouchEvent去处理。
- */
-
-
 public class RefScrollView extends ScrollView {
     private static final int DONE = 0;      //刷新完毕状态
     private static final int PULL_TO_REFRESH = 1;   //下拉刷新状态

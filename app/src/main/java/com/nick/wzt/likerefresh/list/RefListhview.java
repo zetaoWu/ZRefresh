@@ -172,8 +172,7 @@ public class RefListhview extends ListView implements AbsListView.OnScrollListen
                         break;
 
                     case MotionEvent.ACTION_MOVE:
-                        //再次得到y坐标，用来和startY相减来计算offsetY位移值
-
+                        //用来和startY相减来计算offsetY位移值
 
                         //再起判断一下是否为listview顶部并且没有记录y坐标
                         if (mFirstVisibleItem == 0 && !isRecord) {
@@ -306,7 +305,6 @@ public class RefListhview extends ListView implements AbsListView.OnScrollListen
 
     /**
      * 根据状态改变headerView的动画和文字显示
-     *
      * @param state
      */
     private void changeHeaderByState(int state) {

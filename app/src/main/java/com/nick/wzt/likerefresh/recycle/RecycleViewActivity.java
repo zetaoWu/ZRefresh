@@ -17,6 +17,14 @@ import java.util.Arrays;
 
 /**
  * Created by apple on 2017/4/18.
+ *
+ * RecycleView 注意点：
+ * 1. 需要继承BaseRefreshAdapter
+ *      实现onCreateItemViewHolder onBindItemViewHolder 和实现RecycleView.Adapter基本类似
+ *
+ * 3. 代码中mRvRef.scrollToPosition(0); 不可少
+ *
+ *
  */
 
 public class RecycleViewActivity extends AppCompatActivity implements RefRecycleView.onRvRefreshListener {
@@ -32,16 +40,16 @@ public class RecycleViewActivity extends AppCompatActivity implements RefRecycle
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.act_rlv_ref);
-
-        init();
-    }
-
-    private void init() {
         mRvRef = (RefRecycleView) findViewById(R.id.rv_ref);
         mLinearManager = new LinearLayoutManager(this);
         mLinearManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRvRef.setLayoutManager(mLinearManager);
 
+
+        initData();
+    }
+
+    private void initData() {
 
         String[] data = new String[]{"RecycleView-Refresh", "a", "b", "c", "d",
                 "e", "f", "g", "h", "i",
@@ -49,7 +57,6 @@ public class RecycleViewActivity extends AppCompatActivity implements RefRecycle
         mDatas = new ArrayList<String>(Arrays.asList(data));
 
         mRvAdapter = new RecycleViewAdapter();
-
         mRvRef.setAdapter(mRvAdapter);
         mRvRef.setOnRefreshListener(this);
     }

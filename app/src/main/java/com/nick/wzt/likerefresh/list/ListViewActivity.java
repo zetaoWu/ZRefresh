@@ -28,7 +28,6 @@ public class ListViewActivity extends AppCompatActivity implements RefListhview.
 
         setContentView(R.layout.act_listview_ref);
 
-
         mListView = (RefListhview) findViewById(R.id.lv);
 
         String[] data = new String[]{"ListView-Refresh", "a", "b", "c", "d",
