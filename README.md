@@ -5,10 +5,11 @@
     
 简单修改刷新头部图片，即可成为自己的刷新框架。
 
-![gif](https://github.com/zetaoWu/ZRefresh/blob/master/imgs/2.gif)
+![gif](https://github.com/zetaoWu/ZRefresh/blob/master/imgs/1.gif)
 
 <br>
 <br>
+
 ### 基本的目录结构：
 
 ![menu](https://github.com/zetaoWu/ZRefresh/blob/master/imgs/menu.png)
@@ -20,7 +21,7 @@
 ### 基本思路：
     以[RefListhview](https://github.com/zetaoWu/ZRefresh/blob/master/app/src/main/java/com/nick/wzt/likerefresh/list/RefListhview.java)为例,[RefRecycleView](https://github.com/zetaoWu/ZRefresh/blob/master/app/src/main/java/com/nick/wzt/likerefresh/recycle/RefRecycleView.java)，[RefScrollView](https://github.com/zetaoWu/ZRefresh/blob/master/app/src/main/java/com/nick/wzt/likerefresh/scroll/RefScrollView.java)基本差不多。代码均有注释。
 
-  步骤：<br>  
+  步骤：
   1. 基本通过分别`继承ListView，RecycleView，ScrollView`，加载头部视图，通过paddingTop(0,-headHeight,0,0)将头部试图隐藏; <br>
   2. 基本的下拉刷新框架(下拉状态，回放状态，刷新状态等.具体移步RefListhview#onTouchEvent())；RefListhview#ondispatchTouchEvent实现刷新中禁止滑动；<br>
   3. anim中动画实现(背景的移动，轮子、太阳旋转等) `线性插值器需要在代码中使用才能生效`，通过值动画去控制ListView的平滑滑动；<br>
@@ -29,7 +30,7 @@
 <br>
 <br>
 
-## 注意点：特殊说明的在各Activity均有备注。
+### 特殊说明的在各Activity均有备注。
 
 
 <br>
