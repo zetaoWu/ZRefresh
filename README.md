@@ -5,7 +5,11 @@
     
 简单修改刷新头部图片，即可成为自己的刷新框架。
 
-![gif](https://github.com/zetaoWu/ZRefresh/blob/master/imgs/1.gif)
+<div  align="center">    
+  <img src="https://github.com/zetaoWu/ZRefresh/blob/master/imgs/1.gif" width = "300" height = "550" alt="效果" align=center />
+</div>
+
+
 
 <br>
 <br>
