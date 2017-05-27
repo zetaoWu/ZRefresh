@@ -106,6 +106,7 @@ public class RefRecycleView extends RecyclerView {
 
                     //当它松手释放状态的时候
                     if (state == RELEASE_TO_REFRESH && isRecord) {
+                        this.scrollToPosition(0);
                         //当前滑动的距离小于 headViewHeight
                         if (offsetY / RATIO - headViewHeight < 0) {
                             //将状态设置为下啦刷新状态
@@ -122,12 +123,11 @@ public class RefRecycleView extends RecyclerView {
 
                     //当它正在下滑的时候
                     if (state == PULL_TO_REFRESH && isRecord) {
+                        this.scrollToPosition(0);
                         //滑动的距离大于高度
                         if (offsetY / RATIO - headViewHeight >= 0) {
                             state = RELEASE_TO_REFRESH;
                             changeHeaderByState(state);
-                        } else if (offsetY / RATIO - headViewHeight < 0) {
-                            mAdapter.setHeaderPadding((int) (offsetY / RATIO) - headViewHeight);
                         } else if (offsetY <= 0) {
                             state = DONE;
                             changeHeaderByState(state);
@@ -143,6 +143,10 @@ public class RefRecycleView extends RecyclerView {
                             state = PULL_TO_REFRESH;
                             changeHeaderByState(state);
                         }
+                    }
+
+                    if (state == PULL_TO_REFRESH) {
+                        mAdapter.setHeaderPadding((int) (offsetY / RATIO) - headViewHeight);
                     }
 
                     //如果为放开状态

@@ -193,6 +193,7 @@ public class RefScrollView extends ScrollView {
 
                     // 放开刷新状态，
                     if (state == RELEASE_TO_REFRESH && isRecord) {
+                        this.fullScroll(ScrollView.FOCUS_UP);
                         //如果当前滑动的距离小于headerView的总高度
                         if (offsetY / RATIO - headViewHeight < 0) {
                             //将状态置为下拉刷新状态
@@ -213,6 +214,7 @@ public class RefScrollView extends ScrollView {
 
                     //如果当前状态为下拉刷新并且已经记录y坐标
                     if (state == PULL_TO_REFRESH && isRecord) {
+                        this.fullScroll(ScrollView.FOCUS_UP);
                         //如果下拉距离大于等于headerView的总高度  状态变为 松手刷新
                         if (offsetY / RATIO - headViewHeight >= 0) {
                             //将状态变为放开刷新
@@ -257,14 +259,14 @@ public class RefScrollView extends ScrollView {
             case MotionEvent.ACTION_UP:
                 if (state == PULL_TO_REFRESH && (int) (offsetY / RATIO) > 10) {
                     //平滑的隐藏headerView
-                    scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), -headViewHeight, 500);
+                    scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), -headViewHeight, 300);
                 }
 
                 //如果当前状态为放开刷新
                 if (state == RELEASE_TO_REFRESH) {
                     //(int) (offsetY / RATIO -headViewHeight)  滑动的距离 刚好到刷新头部完全显示
                     //平滑的滑到正好完全显示headerView
-                    scrollAnimaionRefresh((int) (offsetY / RATIO) - headViewHeight, 0, 400);
+                    scrollAnimaionRefresh((int) (offsetY / RATIO) - headViewHeight, 0, 300);
                     //将当前状态设置为正在刷新
                     state = REFRESHING;
                     //回调接口的onRefresh方法

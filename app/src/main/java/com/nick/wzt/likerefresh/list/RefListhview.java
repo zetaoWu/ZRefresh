@@ -200,7 +200,7 @@ public class RefListhview extends ListView implements AbsListView.OnScrollListen
                                     stopAnim();
                                     //根据状态改变headerView，主要是更新动画和文字等信息
                                     changeHeaderByState(state);
-                                    headView.setPadding(0, -headViewHeight, 0, 0);
+//                                    headView.setPadding(0, -headViewHeight, 0, 0);
                                 }
                             }
 
@@ -250,14 +250,14 @@ public class RefListhview extends ListView implements AbsListView.OnScrollListen
                         //如果当前状态为下拉刷新状态
                         if (state == PULL_TO_REFRESH && (int) (offsetY / RATIO) > 10) {
                             //平滑的隐藏headerView
-                            scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), -headViewHeight, 500);
+                            scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), -headViewHeight, 300);
                         }
 
                         //如果当前状态为放开刷新
                         if (state == RELEASE_TO_REFRESH) {
                             //(int) (offsetY / RATIO -headViewHeight)  滑动的距离 刚好到刷新头部完全显示
                             //平滑的滑到正好完全显示headerView
-                            scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), 0, 500);
+                            scrollAnimaionRefresh((int) (offsetY / RATIO - headViewHeight), 0, 300);
 
                             //将当前状态设置为正在刷新
                             state = REFRESHING;
